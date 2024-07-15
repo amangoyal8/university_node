@@ -14,3 +14,12 @@ module.exports.handleSunbmitData = async (req, res) => {
     res.send('Favorite added!');
   });
 }
+
+module.exports.handleRemoveFav = async (req, res) => {
+  const { id } = req.query;
+  const que = 'DELETE FROM favorites WHERE id = ?';
+  sql.query(que, [id], (err, result) => {
+    if (err) throw err;
+    res.send('Favorite removed!');
+  });
+}
