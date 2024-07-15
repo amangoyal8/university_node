@@ -14,7 +14,6 @@ module.exports.handleSunbmitData = async (req, res) => {
     res.send('Favorite added!');
   });
 }
-
 module.exports.handleRemoveFav = async (req, res) => {
   const { id } = req.query;
   const que = 'DELETE FROM favorites WHERE id = ?';
